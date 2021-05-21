@@ -162,7 +162,7 @@ $theme-color: #202225;
       .message {
         display: flex;
         margin-bottom: 15px;
-        .message-inner {
+        .msg-ge {
           .user-info {
             display: flex;
             margin-bottom: 2px;
@@ -206,7 +206,7 @@ $theme-color: #202225;
           
           justify-content: flex-end;
           text-align: right;
-          .message-inner {
+          .msg-ge {
             max-width: 75%;
             .content {
               color: rgb(0, 0, 0);
