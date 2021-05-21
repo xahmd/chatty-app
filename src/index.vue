@@ -47,7 +47,7 @@
     <section class="chat-box" id="chat-box">
       <div v-if="state.messages.length === 0">
         <div class="message">
-          <div class="message-inner">
+          <div class="msg-ge">
             <div class="content">
               مرحباً بك | نورتنا 
              😍 لدعوة أصحابك للشات هذا , كل الي عليك تعطيهم الكود  <br />
@@ -72,7 +72,7 @@
           "
           :style="{ paddingTop: message.displayTime ? '10px' : '0px' }"
         >
-          <div class="message-inner">
+          <div class="msg-ge">
             <div
               class="user-info"
               v-if="
@@ -92,7 +92,7 @@
                 class="avatar"
                 :style="{ backgroundColor: '#808e9b' }" 
               >
-                <span>{{ message.username.slice(0, 1) }}</span>
+                 <span>{{ message.username.slice(0, 1) }}</span> 
               </div>
               <div class="username">{{ message.username }}</div>
           
