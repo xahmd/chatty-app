@@ -26,7 +26,7 @@
           value="دخـول"
           :style="{ backgroundColor: state.themeColor }"
           />
-          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك على أحد الرومات فإنك توافق على سياسة الاستخدام   </strong>
+          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a href="./tos.html" style="color: red">  سياسة الاستخدام</a> </strong>
      
       </div>
     </form> 
@@ -47,7 +47,7 @@
     <section class="chat-box" id="chat-box">
       <div v-if="state.messages.length === 0">
         <div class="message">
-          <div class="message-inner">
+          <div class="msg-ge">
             <div class="content">
               مرحباً بك | نورتنا 
              😍 لدعوة أصحابك للشات هذا , كل الي عليك تعطيهم الكود  <br />
@@ -72,7 +72,7 @@
           "
           :style="{ paddingTop: message.displayTime ? '10px' : '0px' }"
         >
-          <div class="message-inner">
+          <div class="msg-ge">
             <div
               class="user-info"
               v-if="
@@ -92,7 +92,7 @@
                 class="avatar"
                 :style="{ backgroundColor: '#808e9b' }" 
               >
-                <span>{{ message.username.slice(0, 1) }}</span>
+                 <span>{{ message.username.slice(0, 1) }}</span> 
               </div>
               <div class="username">{{ message.username }}</div>
           
@@ -115,25 +115,10 @@
 
 
    
-    <div class="emojis" v-if="showEmojiPicker">
-      <div
-        v-for="emoji in emojiList"
-        :key="emoji.id"
-        class="emoji"
-        @click="() => onSelectEmoji(emoji)"
-        draggable="false"
-      >
-        {{ emoji.data }}
-      </div>
-    </div>
+  
     <footer>
       <div :style="{ display: 'flex' }">
-        <button
-          @click.prevent="ShowEmoji"
-          class="emoji-btn"
-          :style="{ backgroundColor: state.themeColor }"
-        >
-        </button>
+    
         <form action="" @submit.prevent="SendMessage">
           <input
             type="text"
@@ -158,14 +143,12 @@
 import { reactive, ref, onMounted } from 'vue';
 import db from './db';
 import $ from 'jquery';
-import allEmojiList from './files/emojis.js';
 
 export default {
   setup() {
     const inputUsername = ref('');
     const inputRChat = ref('');
     const Messagespace = ref('');
-    const showEmojiPicker = ref(false);
 
     var localThemeColor = '#504C4C';
     if (typeof Storage !== 'undefined') {
@@ -184,16 +167,6 @@ export default {
       messages: [],
       themeColor: localThemeColor,
     });
-
-    const emojiList = [];
-    (function addEmojiToList() {
-      allEmojiList.forEach((emo, index) => {
-        emojiList.push({
-          id: index + 1,
-          data: emo,
-        });
-      });
-    })();
 
     const Login = () => {
       if (
@@ -233,7 +206,6 @@ export default {
 
       messageRef.push(message);
       Messagespace.value = '';
-      showEmojiPicker.value = false;
     };
 
     const loadMessages = () => {
@@ -498,14 +470,6 @@ export default {
       });
     };
 
-    const ShowEmoji = () => {
-      showEmojiPicker.value = !showEmojiPicker.value;
-    };
-    const onSelectEmoji = (emoji) => {
-      Messagespace.value += emoji.data;
-      
-
-    };
 
 
 <h10>Made with love</h10>
@@ -517,9 +481,6 @@ export default {
       Messagespace,
       SendMessage,
       leaveChat,
-      ShowEmoji,
-      onSelectEmoji,
-      emojiList,
     };
   },
 };
