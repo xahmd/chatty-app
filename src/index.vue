@@ -11,7 +11,7 @@
     <form action="" class="login-form" @submit.prevent="Login">
       <div class="main-form">
         <h1 style="text-align: center;">مرحباً بك 🤩 </h1>
-        <h2 style="text-align: center; font-size: 16px;"> <small> Made With 💓 By <a href="https://www.instagram.com/9wmm/" target="_blank" style="color: red; cursor: help;"> Ahmed.</a> </small> </h2> 
+        <h2 style="text-align: center; font-size: 16px;"> <small> Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red; cursor: help;"> Ahmed.</a> </small> </h2> 
 
         <label style="text-align: right;" for="username">الاسم</label>
         <input style="text-align: right;"
