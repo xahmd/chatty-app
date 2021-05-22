@@ -229,7 +229,7 @@ export default {
         }
         let messages = [];
         const keys = Object.keys(snapshot.val());
-        for (let i = 10; i < keys.length; i++) {
+        for (let i = 0; i < keys.length; i++) {
           const key = keys[i];
 
           
