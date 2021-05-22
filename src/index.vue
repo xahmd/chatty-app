@@ -4,7 +4,7 @@
     :style="{ backgroundColor: state.themeColor }"
     v-if="state.username === '' || state.username === null"
   >
-    
+
     <form action="" class="login-form" @submit.prevent="Login">
       <div class="main-form">
         <h1 style="text-align: center;">مرحباً بك في شـاتـي 😍 </h1>
@@ -30,12 +30,18 @@
      
       </div>
     </form> 
-    
-  <footer 
+<footer 
   class="main-form" style="position: absolute; bottom: 0px; color: #ede9e9;"> Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed.</a> 
   <a href="https://www.instagram.com/9wmm" target="_blank" style="position: relative; bottom: -2px; color: #ede9e9;" class="main-form fa fa-instagram"></a>
+   <footer> <small>&copy; Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed. </a></small> 
+     <a href="https://www.instagram.com/9wmm" target="_blank" style="position: relative; bottom: -2px; color: #ede9e9;" class="main-form fa fa-instagram"></a>
+ </footer> 
+
    </footer>
+  
   </div>
+
+  
 
   
   <div class="view chat" :style="{ backgroundColor: state.themeColor }" v-else>
