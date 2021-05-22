@@ -99,6 +99,8 @@ $theme-color: #202225;
           color: #fff;
           font-size: 18px;
           font-weight: 700;
+          cursor: pointer;
+
         }
      
         input[type='number'] {
@@ -165,6 +167,7 @@ $theme-color: #202225;
         font-size: 16px;
         margin-bottom: 10px;
         text-align: right;
+        cursor: pointer;
       }
       h1 {
         color: #fff;

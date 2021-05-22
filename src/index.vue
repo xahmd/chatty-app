@@ -1,6 +1,7 @@
 
 
 <template>
+
   <div
     class="view login"
     :style="{ backgroundColor: state.themeColor }"
@@ -10,7 +11,7 @@
     <form action="" class="login-form" @submit.prevent="Login">
       <div class="main-form">
         <h1 style="text-align: center;">مرحباً بك 🤩 </h1>
-        <h2 style="text-align: center; font-size: 16px;"> <small> Made With 💓 By <a href="https://www.instagram.com/9wmm/" target="_blank" style="color: red"> Ahmed.</a> </small> </h2> 
+        <h2 style="text-align: center; font-size: 16px;"> <small> Made With 💓 By <a href="https://www.instagram.com/9wmm/" target="_blank" style="color: red; cursor: help;"> Ahmed.</a> </small> </h2> 
 
         <label style="text-align: right;" for="username">الاسم</label>
         <input style="text-align: right;"
@@ -23,7 +24,7 @@
         <input style="text-align: right;" min="1" max="9"
           type="number"
           v-model="inputRChat"
-          placeholder="أدخل رقم الشات المكون من رقم واحد"
+          placeholder="أدخل رقم الشات (1-9)"
           
         />
         
@@ -36,6 +37,7 @@
           <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a  href="index.html" style="color: red">  سياسة الاستخدام</a> </strong>
      
       </div>
+      
     </form> 
 
   
@@ -142,6 +144,7 @@
     </footer>
   </div>
 
+
 </template>
 
 
@@ -189,7 +192,7 @@ export default {
         inputUsername.value = '';
         inputRChat.value = '';
       }
-     loadMessages();
+     getmsgs();
     };
 
     const chat3l = (string) => {
@@ -201,7 +204,7 @@ export default {
     };
 
     const SendMessage = () => {
-      const messageRef = db.database().ref(`messages-${state.RChat}`);
+      const datasend = db.database().ref(`messages-${state.RChat}`);
       if (Messagespace.value === '' || Messagespace.value === null) {
         return;
       }
@@ -212,14 +215,14 @@ export default {
         time: Date.now(),
       };
 
-      messageRef.push(message);
+      datasend.push(message);
       Messagespace.value = '';
     };
 
-    const loadMessages = () => {
+    const getmsgs = () => {
       state.messages = [];
-      const messageRef = db.database().ref(`messages-${state.RChat}`);
-      messageRef.on('value', (snapshot) => {
+      const datasend = db.database().ref(`messages-${state.RChat}`);
+      datasend.on('value', (snapshot) => {
         const data = snapshot.val();
         if (data == null || data == undefined) {
           return;
