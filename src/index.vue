@@ -30,8 +30,9 @@
      
       </div>
     </form> 
+    
   <footer 
-  class="main-form" style="position: absolute; bottom: 15px; color: #ede9e9;"> Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed.</a> 
+  class="main-form" style="position: absolute; bottom: 0px; color: #ede9e9;"> Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed.</a> 
   <a href="https://www.instagram.com/9wmm" target="_blank" style="position: relative; bottom: -2px; color: #ede9e9;" class="main-form fa fa-instagram"></a>
    </footer>
   </div>
@@ -106,7 +107,7 @@
                     : '#f3f3f3',
               }"
             >
-              {{ message.content }}
+              <p>{{ message.content }}</p>
             </div>
           </div>
         </div>
