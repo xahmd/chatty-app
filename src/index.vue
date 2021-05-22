@@ -20,17 +20,20 @@
         />
 
         <label style="text-align: right;" for="RChat">كود الشات</label>
-        <input style="text-align: right;"
-          type="text"
+        <input style="text-align: right;" min="1" max="9"
+          type="number"
           v-model="inputRChat"
           placeholder="أدخل رقم الشات المكون من رقم واحد"
+          
         />
+        
         <input
           type="submit"
           value="دخـول"
           :style="{ backgroundColor: state.themeColor }"
           />
-          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a  href="tos.html#preview" style="color: red">  سياسة الاستخدام</a> </strong>
+          
+          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a  href="index.html" style="color: red">  سياسة الاستخدام</a> </strong>
      
       </div>
     </form> 
@@ -48,7 +51,7 @@
      
       <div style="color: #fff; text-align: right; font-size: 15px;">مرحباً @{{ state.username }}</div>
     </header>
-    <section class="chat-box" id="chat-box">
+    <section class="mainchat" id="mainchat">
       <div v-if="state.messages.length >= 1">
         <div class="message">
           <div class="msg-ge">
@@ -320,8 +323,7 @@ export default {
       },
     };
 
-    //*** This code is copyright 2002-2016 by Gavin Kistner, !@phrogz.net
-    //*** It is covered under the license viewable at http://phrogz.net/JS/_ReuseLicense.txt
+
     Date.prototype.customFormat = function(formatString) {
       var YYYY,
         YY,
@@ -477,7 +479,6 @@ export default {
 
 
 
-<h10>Made with love</h10>
     return {
       inputUsername,
       inputRChat,
