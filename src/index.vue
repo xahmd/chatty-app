@@ -1,3 +1,5 @@
+
+
 <template>
   <div
     class="view login"
@@ -36,7 +38,7 @@
   
   </div>
 
-  
+ 
 
   
   <div class="view chat" :style="{ backgroundColor: state.themeColor }" v-else>
@@ -114,9 +116,8 @@
         </div>
       </div>
     </section>
+  
 
-
-   
   
     <footer>
       <div :style="{ display: 'flex' }">
@@ -126,7 +127,7 @@
             type="text"
             v-model="Messagespace"
             placeholder="أكـتـب رسالتك"
-            :style="{ caretColor: state.themeColor }"
+            :style="{ caretColor: state.themeColor }" style="direction: rtl;"
           />
           <input
             type="submit"
@@ -140,6 +141,8 @@
 
 </template>
 
+
+
 <script>
 
 import { reactive, ref, onMounted } from 'vue';
@@ -152,12 +155,12 @@ export default {
     const inputRChat = ref('');
     const Messagespace = ref('');
 
-    var localThemeColor = '#504C4C';
+    var mainucolor = '#504C4C';
     if (typeof Storage !== 'undefined') {
       
-      localThemeColor =
+      mainucolor =
         localStorage.getItem('maintheme') === undefined
-          ? localThemeColor
+          ? mainucolor
           : localStorage.getItem('maintheme');
     } else {
       console.log("error in locals") // error message hna
@@ -167,7 +170,7 @@ export default {
       username: '',
       RChat: '',
       messages: [],
-      themeColor: localThemeColor,
+      themeColor: mainucolor,
     });
 
     const Login = () => {
@@ -240,7 +243,7 @@ export default {
 
         state.messages = messages;
 
-        scrollToBottom();
+        maxdown();
       });
     };
    
@@ -411,7 +414,7 @@ export default {
         .replace('#AMPM#', AMPM);
     };
 
-    const scrollToBottom = () => {
+    const maxdown = () => {
       setTimeout(() => {
         window.scrollTo({
           left: 0,
