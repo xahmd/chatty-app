@@ -7,7 +7,9 @@
 
     <form action="" class="login-form" @submit.prevent="Login">
       <div class="main-form">
-        <h1 style="text-align: center;">مرحباً بك في شـاتـي 😍 </h1>
+        <h1 style="text-align: center;">مرحباً بك 🤩 </h1>
+        <h2 style="text-align: center; font-size: 16px;"> <small> Made With 💓 By <a href="https://www.instagram.com/9wmm/" target="_blank" style="color: red"> Ahmed.</a> </small> </h2> 
+
         <label style="text-align: right;" for="username">الاسم</label>
         <input style="text-align: right;"
           type="text"
@@ -26,18 +28,11 @@
           value="دخـول"
           :style="{ backgroundColor: state.themeColor }"
           />
-          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a href="./tos.html" style="color: red">  سياسة الاستخدام</a> </strong>
+          <strong  style="text-align: center; position: relative; bottom: -30px; color: #000;">بمجرد دخولك  فإنك توافق على <a  href="tos.html#preview" style="color: red">  سياسة الاستخدام</a> </strong>
      
       </div>
     </form> 
-<footer 
-  class="main-form" style="position: absolute; bottom: 0px; color: #ede9e9;"> Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed.</a> 
-  <a href="https://www.instagram.com/9wmm" target="_blank" style="position: relative; bottom: -2px; color: #ede9e9;" class="main-form fa fa-instagram"></a>
-   <footer> <small>&copy; Made With 💓 By <a href="https://github.com/ahmedbinmoh" target="_blank" style="color: red"> Ahmed. </a></small> 
-     <a href="https://www.instagram.com/9wmm" target="_blank" style="position: relative; bottom: -2px; color: #ede9e9;" class="main-form fa fa-instagram"></a>
- </footer> 
 
-   </footer>
   
   </div>
 
@@ -52,14 +47,14 @@
       <div style="color: #fff; text-align: right; font-size: 15px;">مرحباً @{{ state.username }}</div>
     </header>
     <section class="chat-box" id="chat-box">
-      <div v-if="state.messages.length === 0">
+      <div v-if="state.messages.length >= 1">
         <div class="message">
           <div class="msg-ge">
             <div class="content">
               مرحباً بك | نورتنا 
-             😍 لدعوة أصحابك للشات هذا , كل الي عليك تعطيهم الكود  <br />
+             😍 لدعوة أصحابك للشات  <br>, كل الي عليك تعطيهم الكود  <br />
                 الكود :
-              {{ state.RChat }}
+             <strong> {{ state.RChat }} </strong>
             </div>
           </div>
         </div>
@@ -188,7 +183,7 @@ export default {
         inputUsername.value = '';
         inputRChat.value = '';
       }
-      loadMessages();
+     loadMessages();
     };
 
     const chat3l = (string) => {
@@ -225,7 +220,7 @@ export default {
         }
         let messages = [];
         const keys = Object.keys(snapshot.val());
-        for (let i = 0; i < keys.length; i++) {
+        for (let i = 10; i < keys.length; i++) {
           const key = keys[i];
 
           
