@@ -111,8 +111,8 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `chattyapp`,
-        short_name: `chattyapp`,
+        name: `Chatty App`,
+        short_name: `Chatty App`,
         description: `Simple app to chating `,
         display: 'standalone',
         orientation: 'portrait',
