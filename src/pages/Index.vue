@@ -6,7 +6,7 @@
         style="height:auto;width:100px;"
       >
       <q-input ref="username" dark dir="rtl" v-model="username" placeholder="الاسم" :rules="[ username => username.length > 2 || 'الرجاء وضع اسم لايقل عن ثلاث خانات']" />
-      <q-input ref="idroom" type="number" readline= true min="1" max="9" dark dir="rtl" v-model="room" placeholder="رقم الغرفة" :rules="[val => !!val || 'يجب وضع رقم الغرفة']" />
+      <q-input ref="idroom" type="number" min="1" max="9" dark dir="rtl" v-model="room" placeholder="رقم الغرفة" :rules="[val => !!val || 'يجب وضع رقم الغرفة']" />
       <br>
       <q-btn @click="click" push color="primary" type="submit" text-color="white" class="full-width" label="دخول" />
       <p style="color:white;margin-top:10px;">بمجرد دخولك فإنك توافق على <a style="color:#43B3C0;text-decoration: blink;" href="#/tos">سياسة الاستخدام</a></p>

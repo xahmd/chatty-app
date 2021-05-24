@@ -6,7 +6,7 @@
                 style="height:auto;width:60px;margin-right:auto;margin-left:25px;"
             >
             
-            <a style="margin-right:auto;" >رقم الغرفة: {{this.roomid}}</a>
+            <a style="margin-right:auto;" >رقم الغرفة : <strong> {{this.roomid}} </strong> </a>
             <q-btn flat color="primary" label="الصفحة الرئيسية" v-go-back=" '/' " style="margin-right:10px;"/>
         </q-header>
 

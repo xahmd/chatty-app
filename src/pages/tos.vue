@@ -14,5 +14,7 @@
         <p style="color: #43B3C0;">Support@chatty-app.com</p>
         <q-btn push color="primary" v-go-back=" '/' " text-color="white" class="full-width" label="الرجوع" />
       </div>
+      
   </q-page>
+  
 </template>
