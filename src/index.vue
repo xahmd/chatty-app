@@ -57,12 +57,7 @@
       <div v-if="state.messages.length >= 1">
         <div class="message">
           <div class="msg-ge">
-            <div class="content">
-              مرحباً بك | نورتنا 
-             😍 لدعوة أصحابك للشات  <br>, كل الي عليك تعطيهم الكود  <br />
-                الكود :
-             <strong> {{ state.RChat }} </strong>
-            </div>
+            
           </div>
         </div>
       </div>
