@@ -38,7 +38,7 @@ export default {
       this.$refs.username.validate()
       this.$refs.idroom.validate()
       if(this.$refs.username.validate() == true && this.$refs.idroom.validate() == true){
-        LocalStorage.set("username", sanitizeString(this.username))
+        LocalStorage.set("username", this.username)
         this.$router.push("/chat/"+ this.room)
       },
          sanitizeString(str) {
