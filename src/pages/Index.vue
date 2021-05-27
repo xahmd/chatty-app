@@ -38,9 +38,21 @@ export default {
       this.$refs.username.validate()
       this.$refs.idroom.validate()
       if(this.$refs.username.validate() == true && this.$refs.idroom.validate() == true){
-        LocalStorage.set("username", this.username)
+        LocalStorage.set("username", sanitizeString(this.username))
         this.$router.push("/chat/"+ this.room)
-      }
+      },
+         sanitizeString(str) {
+    const patterns = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "`": '&grave;'
+    };
+    const reg = /[&<>"']/ig;
+    return str.replace(reg, (match)=>(patterns[match]));
+  }
     }
   }
 }
