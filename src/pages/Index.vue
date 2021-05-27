@@ -7,7 +7,7 @@
       >
       <form action="" @submit.prevent="click()">
         <q-input ref="username" dark dir="rtl" v-model="username" placeholder="الاسم" :rules="[ username => username.length > 2 || 'الرجاء وضع اسم لايقل عن ثلاث خانات']" />
-        <q-input ref="idroom" type="number" dark dir="rtl" v-model="room" placeholder="رقم الغرفة" :rules="[val => !!val || 'يجب وضع رقم الغرفة']"/>
+        <q-input ref="idroom" type="number" min="1" max="9" dark dir="rtl" v-model="room" placeholder="رقم الغرفة" :rules="[val => !!val || 'يجب وضع رقم الغرفة']"/>
         <br>
         <q-btn @click="click" push color="primary" type="submit" text-color="white" class="full-width" label="دخول" />
       </form>
