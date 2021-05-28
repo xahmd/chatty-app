@@ -15,7 +15,7 @@
                     <q-chat-message 
                         style="color: white; text-align: right;"
                         v-if="Message.username == usernameIndex"
-                        :name="[Message.username]"
+                        :name="[sanitizeString(Message.username)]"
                         text-color="white"
                         bg-color="secondary"
                         :text="[sanitizeString(Message.content.toString())]"
@@ -24,7 +24,7 @@
                     <q-chat-message 
                         style="color: white; text-align: left;"
                         v-else
-                        :name="[Message.username]"
+                        :name="[sanitizeString(Message.username)]"
                         text-color="white"
                         bg-color="primary"
                         :text="[sanitizeString(Message.content.toString())]"
