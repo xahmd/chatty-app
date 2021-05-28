@@ -5,6 +5,7 @@
         src="~assets/logo.png"
         style="height:auto;width:100px;"
       >
+      <script data-ad-client="ca-pub-1688802360355925" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <form action="" @submit.prevent="click()">
         <q-input ref="username" dark dir="rtl" v-model="username" placeholder="الاسم" :rules="[ username => username.length > 2 || 'الرجاء وضع اسم لايقل عن ثلاث خانات']" />
         <q-input ref="idroom" type="number" min="1" max="9" dark dir="rtl" v-model="room" placeholder="رقم الغرفة" :rules="[val => !!val || 'يجب وضع رقم الغرفة']"/>
@@ -25,7 +26,6 @@
 
 <script>
 import { LocalStorage } from 'quasar'
-
 export default {
   data(){
     return{
