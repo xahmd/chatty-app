@@ -1,6 +1,7 @@
 # chattyapp (chatty)
 
-Simple app to chating 
+Simple app to chating built with quasar(vuejs)
+
 
 ## Install the dependencies
 ```bash
